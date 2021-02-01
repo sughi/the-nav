@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+body{
+    font-size: 16px;
+    font-family: 'Roboto',sans-serif;
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        align-items: center;
+        position: relative;
+        @media only screen and (max-width:768px) {
+            background-color:#75cfb8;
+        }
+        .hamburger-menu{
+            display: none;
+            @media only screen and (max-width:768px) {
+                display: block;
+                cursor: pointer;
+                z-index: 999;
+                
+            }
+            span{
+                display: block;
+                width: 25px;
+                height: 5px;
+                background-color: #000000;
+                margin-bottom: 2px;
+                transition: 1s ease;
+            }
+            .close {
+                display: block;
+                width: 25px;
+                height: 5px;
+                background-color: #000000;
+                margin-bottom: 2px;
+                transition: 1s ease;
+                &:nth-child(2){
+                    display: none;
+                }
+                &:first-child{
+                    transform: rotate(-45deg) translate(0, 3px);
+                    
+                }
+                &:last-child{
+                    transform: rotate(45deg) translate(-2px,-5px);
+                }
+            }
+        }
+
+        .slide{
+            @media only screen and (max-width:768px){
+                transform: translateX(0);
+            }
+        }
+        ul{
+            width: 60%;
+            display: flex;
+            justify-content: space-around;
+            li{
+                &:last-child{
+                    a{
+                        background-color: #ffffff;
+                        padding: 5px 20px;
+                        border-radius: 10px;
+                        border: 2px solid #244b9c;
+                        color:#244b9c ;
+                        &:hover{
+                            background-color:#244b9c ;
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+            @media only screen and (max-width:768px) {
+                flex-direction: column;
+                align-items: center;
+                height: 70%;
+                justify-content: space-around;
+                position: absolute;
+                padding: 20px;
+                width: 70%;
+                height: 100vh;
+                background-color:#75cfb8;
+                z-index: -1;
+                right: 0;
+                top: 0;
+                transform: translateX(110%);
+                transition: 1s ease-in-out;
+                overflow: hidden;
+               
+            }
+           
+        }
+    }
+
+    .container{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
